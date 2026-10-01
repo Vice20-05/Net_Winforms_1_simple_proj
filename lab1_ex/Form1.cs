@@ -73,7 +73,7 @@ namespace lab1_ex
         private void Start_Click(object sender, EventArgs e)
         {
             timer_elapsed = 0;
-            
+            //timer starter 
 
             timer1.Start();
         }
@@ -84,7 +84,8 @@ namespace lab1_ex
         private  void timer1_Tick_1(object sender, EventArgs e)
         {
             timer_elapsed += timer1.Interval;
-            timer_show.Text = (timer_elapsed / 1000).ToString();
+            //increases interval 
+            timer_show.Text = (timer_elapsed / 1000).ToString();//shows the time in seconds
             if (this.BackColor == Color.Red)
             {
                 this.BackColor = Color.Blue;
