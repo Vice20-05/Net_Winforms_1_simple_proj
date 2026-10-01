@@ -40,6 +40,7 @@ namespace lab1_ex
             this.start = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Stop = new System.Windows.Forms.Button();
+            this.timer_show = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // up
@@ -124,7 +125,15 @@ namespace lab1_ex
             this.Stop.TabIndex = 9;
             this.Stop.Text = "Stop";
             this.Stop.UseVisualStyleBackColor = true;
-            this.Stop.Click += new System.EventHandler(this.button1_Click_1);
+            this.Stop.Click += new System.EventHandler(this.Stop_Click);
+            // 
+            // timer_show
+            // 
+            this.timer_show.Location = new System.Drawing.Point(120, 179);
+            this.timer_show.Name = "timer_show";
+            this.timer_show.Size = new System.Drawing.Size(100, 20);
+            this.timer_show.TabIndex = 10;
+            this.timer_show.TextChanged += new System.EventHandler(this.timer_show_TextChanged);
             // 
             // Form1
             // 
@@ -132,6 +141,7 @@ namespace lab1_ex
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.timer_show);
             this.Controls.Add(this.Stop);
             this.Controls.Add(this.start);
             this.Controls.Add(this.textBox1);
@@ -164,6 +174,7 @@ namespace lab1_ex
         private System.Windows.Forms.Button start;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button Stop;
+        private System.Windows.Forms.TextBox timer_show;
     }
 }
 

@@ -12,6 +12,7 @@ namespace lab1_ex
 {
     public partial class Form1 : Form
     {
+    int timer_elapsed = 0;
         public Form1()
         {
             InitializeComponent();
@@ -67,18 +68,23 @@ namespace lab1_ex
 
         private void Start_Click(object sender, EventArgs e)
         {
-           timer1.Start();
+            timer_elapsed = 0;
+            
+
+            timer1.Start();
         }
 
      
         
 
-        private async void timer1_Tick_1(object sender, EventArgs e)
+        private  void timer1_Tick_1(object sender, EventArgs e)
         {
+            timer_elapsed += timer1.Interval;
+            timer_show.Text = (timer_elapsed / 1000).ToString();
             if (this.BackColor == Color.Red)
             {
                 this.BackColor = Color.Blue;
-                await System.Threading.Tasks.Task.Delay(100);
+                System.Threading.Tasks.Task.Delay(100);
             }
                 else
             {
@@ -89,6 +95,11 @@ namespace lab1_ex
         private void Stop_Click(object sender, EventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void timer_show_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
