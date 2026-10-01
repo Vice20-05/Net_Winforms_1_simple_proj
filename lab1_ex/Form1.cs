@@ -31,7 +31,7 @@ namespace lab1_ex
         {
             //up
             textBox1.Text="up";
-            this.Top -= 20;
+            this.Top -= 20; // Move the form 20 pixels up
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace lab1_ex
         {
             //left
             textBox1.Text = "left";
-            this.Left -= 20; 
+            this.Left -= 20; // Move the form 20 pixels to the left
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
@@ -60,14 +60,14 @@ namespace lab1_ex
         {
             //right
             textBox1.Text = "right";
-            this.Left += 20;
+            this.Left += 20;// Move the form 20 pixels to the right
         }
 
         private void down_Click(object sender, EventArgs e)
         {
             //down
             textBox1.Text = "down";
-            this.Top += 20;
+            this.Top += 20; // Move the form 20 pixels down
         }
 
         private void Start_Click(object sender, EventArgs e)
@@ -85,14 +85,21 @@ namespace lab1_ex
         {
             timer_elapsed += timer1.Interval;
             timer_show.Text = (timer_elapsed / 1000).ToString();
+
             if (this.BackColor == Color.Red)
             {
                 this.BackColor = Color.Blue;
                 System.Threading.Tasks.Task.Delay(100);
             }
+            else if(this.BackColor == Color.Blue)
+            {
+                this.BackColor = Color.Green;
+                System.Threading.Tasks.Task.Delay(100);
+            }
                 else
             {
                 this.BackColor = Color.Red;
+                System.Threading.Tasks.Task.Delay(100); 
             }
         }
 
