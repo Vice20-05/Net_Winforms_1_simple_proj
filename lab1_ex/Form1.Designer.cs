@@ -1,4 +1,6 @@
-﻿namespace lab1_ex
+﻿using System;
+
+namespace lab1_ex
 {
     partial class Form1
     {
@@ -28,22 +30,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.up = new System.Windows.Forms.Button();
             this.down = new System.Windows.Forms.Button();
             this.left = new System.Windows.Forms.Button();
             this.right = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.start = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Stop = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // up
             // 
+            this.up.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.up.Location = new System.Drawing.Point(391, 206);
             this.up.Name = "up";
             this.up.Size = new System.Drawing.Size(75, 23);
             this.up.TabIndex = 0;
             this.up.Text = "up";
-            this.up.UseVisualStyleBackColor = true;
+            this.up.UseVisualStyleBackColor = false;
             this.up.Click += new System.EventHandler(this.button1_Click);
             // 
             // down
@@ -68,12 +75,13 @@
             // 
             // right
             // 
+            this.right.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.right.Location = new System.Drawing.Point(519, 242);
             this.right.Name = "right";
             this.right.Size = new System.Drawing.Size(75, 23);
             this.right.TabIndex = 3;
             this.right.Text = "right";
-            this.right.UseVisualStyleBackColor = true;
+            this.right.UseVisualStyleBackColor = false;
             this.right.Click += new System.EventHandler(this.button4_Click);
             // 
             // label1
@@ -93,12 +101,39 @@
             this.textBox1.TabIndex = 6;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
+            // start
+            // 
+            this.start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.start.Location = new System.Drawing.Point(190, 273);
+            this.start.Name = "start";
+            this.start.Size = new System.Drawing.Size(75, 23);
+            this.start.TabIndex = 8;
+            this.start.Text = "Start";
+            this.start.UseVisualStyleBackColor = false;
+            this.start.Click += new System.EventHandler(this.Start_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // Stop
+            // 
+            this.Stop.Location = new System.Drawing.Point(103, 274);
+            this.Stop.Name = "Stop";
+            this.Stop.Size = new System.Drawing.Size(75, 23);
+            this.Stop.TabIndex = 9;
+            this.Stop.Text = "Stop";
+            this.Stop.UseVisualStyleBackColor = true;
+            this.Stop.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Stop);
+            this.Controls.Add(this.start);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.right);
@@ -113,6 +148,11 @@
 
         }
 
+        private void stop_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private System.Windows.Forms.Button up;
@@ -121,6 +161,9 @@
         private System.Windows.Forms.Button right;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button start;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button Stop;
     }
 }
 
