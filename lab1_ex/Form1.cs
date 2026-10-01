@@ -31,6 +31,7 @@ namespace lab1_ex
         {
             //up
             textBox1.Text="up";
+            this.Top -= 20;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace lab1_ex
         {
             //left
             textBox1.Text = "left";
+            this.Left -= 20; 
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
@@ -58,12 +60,14 @@ namespace lab1_ex
         {
             //right
             textBox1.Text = "right";
+            this.Left += 20;
         }
 
         private void down_Click(object sender, EventArgs e)
         {
             //down
             textBox1.Text = "down";
+            this.Top += 20;
         }
 
         private void Start_Click(object sender, EventArgs e)
